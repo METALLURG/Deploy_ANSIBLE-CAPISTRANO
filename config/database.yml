@@ -1,0 +1,23 @@
+setup: &setup
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: 
+  encoding: unicode
+  min_messages: WARNING
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *setup
+  database: YOU_NAME_APP_production
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
